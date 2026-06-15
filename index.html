@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Badminton Pro Shop — ร้านขายอุปกรณ์แบดมินตันออนไลน์ ครบครัน ไม้แบด Yonex, Li-Ning, Victor, RSL, Apacs พร้อมอุปกรณ์เสริมทุกชนิด">
+    <meta name="keywords" content="แบดมินตัน, ไม้แบด, Yonex, Li-Ning, Victor, badminton, racket">
+    <title>🏸 Badminton Pro Shop — อุปกรณ์แบดมินตันครบวงจร</title>
+
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- AOS - Animate On Scroll -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ========================================
+         SECTION 1: NAVIGATION BAR
+         ======================================== -->
+    <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand navbar-brand-custom" href="#">
+                <span class="brand-icon">🏸</span>BADMINTON PRO
+            </a>
+            <button class="navbar-toggler navbar-toggler-custom" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#hero"><i class="bi bi-house-door me-1"></i>หน้าแรก</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#products"><i class="bi bi-grid me-1"></i>สินค้า</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#brands"><i class="bi bi-bookmark-star me-1"></i>แบรนด์</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#stats"><i class="bi bi-graph-up me-1"></i>สถิติ</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center gap-2">
+                    <button class="btn btn-cart" id="btnCart">
+                        <i class="bi bi-cart3 me-1"></i>ตะกร้า
+                        <span class="badge rounded-pill" id="cartBadge">0</span>
+                    </button>
+                    <button class="btn btn-login-nav" data-bs-toggle="modal" data-bs-target="#loginModal">
+                        <i class="bi bi-person-circle me-1"></i>เข้าสู่ระบบ
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========================================
+         SECTION 2: HERO BANNER
+         ======================================== -->
+    <section id="hero" class="hero-section">
+        <div class="hero-bg" id="heroBg"></div>
+        <div class="hero-overlay"></div>
+
+        <!-- Floating Particles -->
+        <div class="hero-particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+
+        <!-- Floating Shuttlecock -->
+        <img src="image/shuttlecock.png" alt="Shuttlecock" class="floating-shuttlecock">
+
+        <div class="container hero-content">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <p class="hero-subtitle">🏆 #1 Badminton Store in Thailand</p>
+                    <h1 class="hero-title">
+                        ร้านขาย<br>
+                        <span class="highlight">แบดมินตัน</span><br>
+                        ครบวงจร
+                    </h1>
+                    <div class="mb-4">
+                        <span class="hero-typing" id="typingText">Yonex • Li-Ning • Victor • RSL • Apacs</span>
+                    </div>
+                    <p class="hero-description">
+                        รวมอุปกรณ์แบดมินตันจากแบรนด์ชั้นนำระดับโลก ไม้แบด ลูกขนไก่ รองเท้า กระเป๋า
+                        และอุปกรณ์เสริมทุกชนิด พร้อมส่งทั่วไทย
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#products" class="btn btn-hero-primary">
+                            <i class="bi bi-bag-check me-2"></i>เลือกซื้อสินค้า
+                        </a>
+                        <a href="#brands" class="btn btn-hero-secondary">
+                            <i class="bi bi-play-circle me-2"></i>ดูแบรนด์ทั้งหมด
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECTION 3 & 4: BRANDS + PRODUCTS
+         ======================================== -->
+    <section id="brands" class="section-brands">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">
+                เลือกชม <span class="highlight">แบรนด์</span> สินค้า
+            </h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                รวมแบรนด์แบดมินตันชั้นนำระดับโลก คัดสรรเฉพาะสินค้าคุณภาพดีที่สุดให้คุณ
+            </p>
+
+            <!-- Brand Filter Buttons -->
+            <div class="brand-filters" data-aos="fade-up" data-aos-delay="200" id="brandFilters">
+                <button class="brand-filter-btn active" data-brand="all">
+                    <i class="bi bi-grid-3x3-gap brand-icon"></i>ทั้งหมด
+                </button>
+                <button class="brand-filter-btn" data-brand="yonex">
+                    <i class="bi bi-trophy brand-icon"></i>Yonex
+                </button>
+                <button class="brand-filter-btn" data-brand="lining">
+                    <i class="bi bi-lightning brand-icon"></i>Li-Ning
+                </button>
+                <button class="brand-filter-btn" data-brand="victor">
+                    <i class="bi bi-shield-check brand-icon"></i>Victor
+                </button>
+                <button class="brand-filter-btn" data-brand="rsl">
+                    <i class="bi bi-star brand-icon"></i>RSL
+                </button>
+                <button class="brand-filter-btn" data-brand="apacs">
+                    <i class="bi bi-bullseye brand-icon"></i>Apacs
+                </button>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="row g-4" id="products">
+
+                <!-- Product 1: Yonex Astrox 100 ZZ -->
+                <div class="col-lg-4 col-md-6 product-col" data-brand="yonex" data-aos="fade-up" data-aos-delay="100">
+                    <div class="product-card">
+                        <div class="product-img-wrapper">
+                            <span class="product-badge badge-bestseller">🔥 ขายดี</span>
+                            <button class="product-wishlist" title="เพิ่มในรายการโปรด"><i
+                                    class="bi bi-heart"></i></button>
+                            <img src="image/yonex-racket.png" alt="Yonex Astrox 100 ZZ">
+                        </div>
+                        <div class="product-body">
+                            <span class="product-brand">Yonex</span>
+                            <h5 class="product-name">Yonex Astrox 100 ZZ</h5>
+                            <div class="product-rating">
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-half star"></i>
+                                <span class="rating-count">(128)</span>
+                            </div>
+                            <div class="product-price-row">
+                                <span class="product-price">฿7,900</span>
+                                <span class="product-price-old">฿9,500</span>
+                                <span class="product-discount">-17%</span>
+                            </div>
+                            <button class="btn-add-cart" onclick="addToCart(this, 'Yonex Astrox 100 ZZ')">
+                                <i class="bi bi-cart-plus cart-icon"></i>เพิ่มลงตะกร้า
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2: Li-Ning AxForce 80 -->
+                <div class="col-lg-4 col-md-6 product-col" data-brand="lining" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-card">
+                        <div class="product-img-wrapper">
+                            <span class="product-badge badge-new">✨ ใหม่</span>
+                            <button class="product-wishlist" title="เพิ่มในรายการโปรด"><i
+                                    class="bi bi-heart"></i></button>
+                            <img src="image/lining-racket.png" alt="Li-Ning AxForce 80">
+                        </div>
+                        <div class="product-body">
+                            <span class="product-brand">Li-Ning</span>
+                            <h5 class="product-name">Li-Ning AxForce 80</h5>
+                            <div class="product-rating">
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <span class="rating-count">(95)</span>
+                            </div>
+                            <div class="product-price-row">
+                                <span class="product-price">฿8,500</span>
+                            </div>
+                            <button class="btn-add-cart" onclick="addToCart(this, 'Li-Ning AxForce 80')">
+                                <i class="bi bi-cart-plus cart-icon"></i>เพิ่มลงตะกร้า
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3: Victor Thruster Ryuga -->
+                <div class="col-lg-4 col-md-6 product-col" data-brand="victor" data-aos="fade-up" data-aos-delay="300">
+                    <div class="product-card">
+                        <div class="product-img-wrapper">
+                            <span class="product-badge badge-bestseller">🔥 ขายดี</span>
+                            <button class="product-wishlist" title="เพิ่มในรายการโปรด"><i
+                                    class="bi bi-heart"></i></button>
+                            <img src="image/victor-racket.png" alt="Victor Thruster Ryuga">
+                        </div>
+                        <div class="product-body">
+                            <span class="product-brand">Victor</span>
+                            <h5 class="product-name">Victor Thruster Ryuga</h5>
+                            <div class="product-rating">
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star star empty"></i>
+                                <span class="rating-count">(76)</span>
+                            </div>
+                            <div class="product-price-row">
+                                <span class="product-price">฿6,800</span>
+                                <span class="product-price-old">฿7,500</span>
+                                <span class="product-discount">-9%</span>
+                            </div>
+                            <button class="btn-add-cart" onclick="addToCart(this, 'Victor Thruster Ryuga')">
+                                <i class="bi bi-cart-plus cart-icon"></i>เพิ่มลงตะกร้า
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4: Shuttlecock RSL -->
+                <div class="col-lg-4 col-md-6 product-col" data-brand="rsl" data-aos="fade-up" data-aos-delay="100">
+                    <div class="product-card">
+                        <div class="product-img-wrapper">
+                            <span class="product-badge badge-sale">🏷️ ลดราคา</span>
+                            <button class="product-wishlist" title="เพิ่มในรายการโปรด"><i
+                                    class="bi bi-heart"></i></button>
+                            <img src="image/shuttlecock.png" alt="RSL Classic Shuttlecock">
+                        </div>
+                        <div class="product-body">
+                            <span class="product-brand">RSL</span>
+                            <h5 class="product-name">RSL Classic Tournament ลูกขนไก่</h5>
+                            <div class="product-rating">
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <span class="rating-count">(243)</span>
+                            </div>
+                            <div class="product-price-row">
+                                <span class="product-price">฿690</span>
+                                <span class="product-price-old">฿850</span>
+                                <span class="product-discount">-19%</span>
+                            </div>
+                            <button class="btn-add-cart" onclick="addToCart(this, 'RSL Classic Shuttlecock')">
+                                <i class="bi bi-cart-plus cart-icon"></i>เพิ่มลงตะกร้า
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5: Yonex Shoes -->
+                <div class="col-lg-4 col-md-6 product-col" data-brand="yonex" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-card">
+                        <div class="product-img-wrapper">
+                            <span class="product-badge badge-new">✨ ใหม่</span>
+                            <button class="product-wishlist" title="เพิ่มในรายการโปรด"><i
+                                    class="bi bi-heart"></i></button>
+                            <img src="image/badminton-shoes.png" alt="Yonex Power Cushion 65Z">
+                        </div>
+                        <div class="product-body">
+                            <span class="product-brand">Yonex</span>
+                            <h5 class="product-name">Yonex Power Cushion 65Z รองเท้า</h5>
+                            <div class="product-rating">
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-half star"></i>
+                                <span class="rating-count">(189)</span>
+                            </div>
+                            <div class="product-price-row">
+                                <span class="product-price">฿4,500</span>
+                            </div>
+                            <button class="btn-add-cart" onclick="addToCart(this, 'Yonex Power Cushion 65Z')">
+                                <i class="bi bi-cart-plus cart-icon"></i>เพิ่มลงตะกร้า
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6: Victor Bag -->
+                <div class="col-lg-4 col-md-6 product-col" data-brand="victor" data-aos="fade-up" data-aos-delay="300">
+                    <div class="product-card">
+                        <div class="product-img-wrapper">
+                            <button class="product-wishlist" title="เพิ่มในรายการโปรด"><i
+                                    class="bi bi-heart"></i></button>
+                            <img src="image/badminton-bag.png" alt="Victor Thruster Backpack">
+                        </div>
+                        <div class="product-body">
+                            <span class="product-brand">Victor</span>
+                            <h5 class="product-name">Victor Thruster Backpack กระเป๋า</h5>
+                            <div class="product-rating">
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star star empty"></i>
+                                <span class="rating-count">(54)</span>
+                            </div>
+                            <div class="product-price-row">
+                                <span class="product-price">฿2,900</span>
+                                <span class="product-price-old">฿3,500</span>
+                                <span class="product-discount">-17%</span>
+                            </div>
+                            <button class="btn-add-cart" onclick="addToCart(this, 'Victor Thruster Backpack')">
+                                <i class="bi bi-cart-plus cart-icon"></i>เพิ่มลงตะกร้า
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 7: Yonex String -->
+                <div class="col-lg-4 col-md-6 product-col" data-brand="yonex" data-aos="fade-up" data-aos-delay="100">
+                    <div class="product-card">
+                        <div class="product-img-wrapper">
+                            <span class="product-badge badge-bestseller">🔥 ขายดี</span>
+                            <button class="product-wishlist" title="เพิ่มในรายการโปรด"><i
+                                    class="bi bi-heart"></i></button>
+                            <img src="image/badminton-string.png" alt="Yonex BG66 Ultimax">
+                        </div>
+                        <div class="product-body">
+                            <span class="product-brand">Yonex</span>
+                            <h5 class="product-name">Yonex BG66 Ultimax เอ็นแบด</h5>
+                            <div class="product-rating">
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <span class="rating-count">(312)</span>
+                            </div>
+                            <div class="product-price-row">
+                                <span class="product-price">฿350</span>
+                            </div>
+                            <button class="btn-add-cart" onclick="addToCart(this, 'Yonex BG66 Ultimax')">
+                                <i class="bi bi-cart-plus cart-icon"></i>เพิ่มลงตะกร้า
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 8: Grip -->
+                <div class="col-lg-4 col-md-6 product-col" data-brand="apacs" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-card">
+                        <div class="product-img-wrapper">
+                            <span class="product-badge badge-sale">🏷️ ลดราคา</span>
+                            <button class="product-wishlist" title="เพิ่มในรายการโปรด"><i
+                                    class="bi bi-heart"></i></button>
+                            <img src="image/badminton-grip.png" alt="Apacs Premium Overgrip">
+                        </div>
+                        <div class="product-body">
+                            <span class="product-brand">Apacs</span>
+                            <h5 class="product-name">Apacs Premium Overgrip กริป (12 ชิ้น)</h5>
+                            <div class="product-rating">
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-half star"></i>
+                                <span class="rating-count">(167)</span>
+                            </div>
+                            <div class="product-price-row">
+                                <span class="product-price">฿280</span>
+                                <span class="product-price-old">฿420</span>
+                                <span class="product-discount">-33%</span>
+                            </div>
+                            <button class="btn-add-cart" onclick="addToCart(this, 'Apacs Premium Overgrip')">
+                                <i class="bi bi-cart-plus cart-icon"></i>เพิ่มลงตะกร้า
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 9: Li-Ning Shoes (extra) -->
+                <div class="col-lg-4 col-md-6 product-col" data-brand="lining" data-aos="fade-up" data-aos-delay="300">
+                    <div class="product-card">
+                        <div class="product-img-wrapper">
+                            <button class="product-wishlist" title="เพิ่มในรายการโปรด"><i
+                                    class="bi bi-heart"></i></button>
+                            <img src="image/badminton-shoes.png" alt="Li-Ning Saga Pro">
+                        </div>
+                        <div class="product-body">
+                            <span class="product-brand">Li-Ning</span>
+                            <h5 class="product-name">Li-Ning Saga Pro รองเท้า</h5>
+                            <div class="product-rating">
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star star empty"></i>
+                                <span class="rating-count">(88)</span>
+                            </div>
+                            <div class="product-price-row">
+                                <span class="product-price">฿3,900</span>
+                                <span class="product-price-old">฿4,800</span>
+                                <span class="product-discount">-19%</span>
+                            </div>
+                            <button class="btn-add-cart" onclick="addToCart(this, 'Li-Ning Saga Pro')">
+                                <i class="bi bi-cart-plus cart-icon"></i>เพิ่มลงตะกร้า
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 10: Yonex Nanoflare 1000Z -->
+                <div class="col-lg-4 col-md-6 product-col" data-brand="yonex" data-aos="fade-up" data-aos-delay="100">
+                    <div class="product-card">
+                        <div class="product-img-wrapper">
+                            <span class="product-badge badge-bestseller">🔥 ฮิตสุดๆ</span>
+                            <button class="product-wishlist" title="เพิ่มในรายการโปรด"><i
+                                    class="bi bi-heart"></i></button>
+                            <img src="image/yonex-nanoflare.png" alt="Yonex Nanoflare 1000Z">
+                        </div>
+                        <div class="product-body">
+                            <span class="product-brand">Yonex</span>
+                            <h5 class="product-name">Yonex Nanoflare 1000Z ไม้แบดมินตัน</h5>
+                            <div class="product-rating">
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <span class="rating-count">(115)</span>
+                            </div>
+                            <div class="product-price-row">
+                                <span class="product-price">฿7,200</span>
+                                <span class="product-price-old">฿8,900</span>
+                                <span class="product-discount">-19%</span>
+                            </div>
+                            <button class="btn-add-cart" onclick="addToCart(this, 'Yonex Nanoflare 1000Z')">
+                                <i class="bi bi-cart-plus cart-icon"></i>เพิ่มลงตะกร้า
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 11: Yonex Power Cushion Eclipsion Z3 -->
+                <div class="col-lg-4 col-md-6 product-col" data-brand="yonex" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-card">
+                        <div class="product-img-wrapper">
+                            <span class="product-badge badge-new">✨ ใหม่ล่าสุด</span>
+                            <button class="product-wishlist" title="เพิ่มในรายการโปรด"><i
+                                    class="bi bi-heart"></i></button>
+                            <img src="image/yonex-shoes-eclipsion.png" alt="Yonex Power Cushion Eclipsion Z3">
+                        </div>
+                        <div class="product-body">
+                            <span class="product-brand">Yonex</span>
+                            <h5 class="product-name">Yonex Power Cushion Eclipsion Z3 รองเท้า</h5>
+                            <div class="product-rating">
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-half star"></i>
+                                <span class="rating-count">(82)</span>
+                            </div>
+                            <div class="product-price-row">
+                                <span class="product-price">฿5,400</span>
+                            </div>
+                            <button class="btn-add-cart" onclick="addToCart(this, 'Yonex Power Cushion Eclipsion Z3')">
+                                <i class="bi bi-cart-plus cart-icon"></i>เพิ่มลงตะกร้า
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 12: Yonex Pro Tournament Bag -->
+                <div class="col-lg-4 col-md-6 product-col" data-brand="yonex" data-aos="fade-up" data-aos-delay="300">
+                    <div class="product-card">
+                        <div class="product-img-wrapper">
+                            <button class="product-wishlist" title="เพิ่มในรายการโปรด"><i
+                                    class="bi bi-heart"></i></button>
+                            <img src="image/yonex-pro-bag.png" alt="Yonex Pro Tournament Bag">
+                        </div>
+                        <div class="product-body">
+                            <span class="product-brand">Yonex</span>
+                            <h5 class="product-name">Yonex Pro Tournament Bag กระเป๋า 2 ช่อง</h5>
+                            <div class="product-rating">
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-half star"></i>
+                                <span class="rating-count">(43)</span>
+                            </div>
+                            <div class="product-price-row">
+                                <span class="product-price">฿3,600</span>
+                                <span class="product-price-old">฿4,500</span>
+                                <span class="product-discount">-20%</span>
+                            </div>
+                            <button class="btn-add-cart" onclick="addToCart(this, 'Yonex Pro Tournament Bag')">
+                                <i class="bi bi-cart-plus cart-icon"></i>เพิ่มลงตะกร้า
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 13: Yonex Game Shirt Pro -->
+                <div class="col-lg-4 col-md-6 product-col" data-brand="yonex" data-aos="fade-up" data-aos-delay="100">
+                    <div class="product-card">
+                        <div class="product-img-wrapper">
+                            <button class="product-wishlist" title="เพิ่มในรายการโปรด"><i
+                                    class="bi bi-heart"></i></button>
+                            <img src="image/yonex-shirt.png" alt="Yonex Game Shirt Pro">
+                        </div>
+                        <div class="product-body">
+                            <span class="product-brand">Yonex</span>
+                            <h5 class="product-name">Yonex Game Shirt Pro เสื้อแข่งทีมชาติ</h5>
+                            <div class="product-rating">
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-half star"></i>
+                                <span class="rating-count">(67)</span>
+                            </div>
+                            <div class="product-price-row">
+                                <span class="product-price">฿1,850</span>
+                            </div>
+                            <button class="btn-add-cart" onclick="addToCart(this, 'Yonex Game Shirt Pro')">
+                                <i class="bi bi-cart-plus cart-icon"></i>เพิ่มลงตะกร้า
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 14: Li-Ning Halbertec 8000 -->
+                <div class="col-lg-4 col-md-6 product-col" data-brand="lining" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-card">
+                        <div class="product-img-wrapper">
+                            <span class="product-badge badge-new">✨ มาใหม่</span>
+                            <button class="product-wishlist" title="เพิ่มในรายการโปรด"><i
+                                    class="bi bi-heart"></i></button>
+                            <img src="image/lining-halbertec.png" alt="Li-Ning Halbertec 8000">
+                        </div>
+                        <div class="product-body">
+                            <span class="product-brand">Li-Ning</span>
+                            <h5 class="product-name">Li-Ning Halbertec 8000 ไม้แบดมินตัน</h5>
+                            <div class="product-rating">
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <span class="rating-count">(56)</span>
+                            </div>
+                            <div class="product-price-row">
+                                <span class="product-price">฿6,900</span>
+                            </div>
+                            <button class="btn-add-cart" onclick="addToCart(this, 'Li-Ning Halbertec 8000')">
+                                <i class="bi bi-cart-plus cart-icon"></i>เพิ่มลงตะกร้า
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 15: Li-Ning Shadow Ranger -->
+                <div class="col-lg-4 col-md-6 product-col" data-brand="lining" data-aos="fade-up" data-aos-delay="300">
+                    <div class="product-card">
+                        <div class="product-img-wrapper">
+                            <span class="product-badge badge-bestseller">🔥 ขายดี</span>
+                            <button class="product-wishlist" title="เพิ่มในรายการโปรด"><i
+                                    class="bi bi-heart"></i></button>
+                            <img src="image/lining-shoes-shadow.png" alt="Li-Ning Shadow Ranger">
+                        </div>
+                        <div class="product-body">
+                            <span class="product-brand">Li-Ning</span>
+                            <h5 class="product-name">Li-Ning Shadow Ranger รองเท้าแบด</h5>
+                            <div class="product-rating">
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-half star"></i>
+                                <span class="rating-count">(38)</span>
+                            </div>
+                            <div class="product-price-row">
+                                <span class="product-price">฿3,200</span>
+                            </div>
+                            <button class="btn-add-cart" onclick="addToCart(this, 'Li-Ning Shadow Ranger')">
+                                <i class="bi bi-cart-plus cart-icon"></i>เพิ่มลงตะกร้า
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 16: Li-Ning 6-in-1 Badminton Bag -->
+                <div class="col-lg-4 col-md-6 product-col" data-brand="lining" data-aos="fade-up" data-aos-delay="100">
+                    <div class="product-card">
+                        <div class="product-img-wrapper">
+                            <button class="product-wishlist" title="เพิ่มในรายการโปรด"><i
+                                    class="bi bi-heart"></i></button>
+                            <img src="image/badminton-bag.png" alt="Li-Ning 6-in-1 Badminton Bag">
+                        </div>
+                        <div class="product-body">
+                            <span class="product-brand">Li-Ning</span>
+                            <h5 class="product-name">Li-Ning 6-in-1 Badminton Bag กระเป๋า</h5>
+                            <div class="product-rating">
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star star empty"></i>
+                                <span class="rating-count">(29)</span>
+                            </div>
+                            <div class="product-price-row">
+                                <span class="product-price">฿2,450</span>
+                                <span class="product-price-old">฿2,900</span>
+                                <span class="product-discount">-15%</span>
+                            </div>
+                            <button class="btn-add-cart" onclick="addToCart(this, 'Li-Ning 6-in-1 Badminton Bag')">
+                                <i class="bi bi-cart-plus cart-icon"></i>เพิ่มลงตะกร้า
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 17: Li-Ning No.1 String -->
+                <div class="col-lg-4 col-md-6 product-col" data-brand="lining" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-card">
+                        <div class="product-img-wrapper">
+                            <span class="product-badge badge-sale">🏷️ คุ้มสุด</span>
+                            <button class="product-wishlist" title="เพิ่มในรายการโปรด"><i
+                                    class="bi bi-heart"></i></button>
+                            <img src="image/badminton-string.png" alt="Li-Ning No.1 String">
+                        </div>
+                        <div class="product-body">
+                            <span class="product-brand">Li-Ning</span>
+                            <h5 class="product-name">Li-Ning No.1 เอ็นแบดมินตัน (0.65mm)</h5>
+                            <div class="product-rating">
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <span class="rating-count">(142)</span>
+                            </div>
+                            <div class="product-price-row">
+                                <span class="product-price">฿290</span>
+                                <span class="product-price-old">฿350</span>
+                                <span class="product-discount">-17%</span>
+                            </div>
+                            <button class="btn-add-cart" onclick="addToCart(this, 'Li-Ning No.1 String')">
+                                <i class="bi bi-cart-plus cart-icon"></i>เพิ่มลงตะกร้า
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 18: Victor AuraSpeed 100X -->
+                <div class="col-lg-4 col-md-6 product-col" data-brand="victor" data-aos="fade-up" data-aos-delay="300">
+                    <div class="product-card">
+                        <div class="product-img-wrapper">
+                            <span class="product-badge badge-bestseller">🔥 แนะนำ</span>
+                            <button class="product-wishlist" title="เพิ่มในรายการโปรด"><i
+                                    class="bi bi-heart"></i></button>
+                            <img src="image/victor-auraspeed.png" alt="Victor AuraSpeed 100X">
+                        </div>
+                        <div class="product-body">
+                            <span class="product-brand">Victor</span>
+                            <h5 class="product-name">Victor AuraSpeed 100X ไม้แบดมินตัน</h5>
+                            <div class="product-rating">
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <span class="rating-count">(93)</span>
+                            </div>
+                            <div class="product-price-row">
+                                <span class="product-price">฿6,400</span>
+                                <span class="product-price-old">฿7,800</span>
+                                <span class="product-discount">-17%</span>
+                            </div>
+                            <button class="btn-add-cart" onclick="addToCart(this, 'Victor AuraSpeed 100X')">
+                                <i class="bi bi-cart-plus cart-icon"></i>เพิ่มลงตะกร้า
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 19: Victor P9200CC Shoes -->
+                <div class="col-lg-4 col-md-6 product-col" data-brand="victor" data-aos="fade-up" data-aos-delay="100">
+                    <div class="product-card">
+                        <div class="product-img-wrapper">
+                            <span class="product-badge badge-new">✨ ใหม่</span>
+                            <button class="product-wishlist" title="เพิ่มในรายการโปรด"><i
+                                    class="bi bi-heart"></i></button>
+                            <img src="image/badminton-shoes.png" alt="Victor P9200CC Shoes">
+                        </div>
+                        <div class="product-body">
+                            <span class="product-brand">Victor</span>
+                            <h5 class="product-name">Victor P9200CC รองเท้าแบดมินตันตัวท็อป</h5>
+                            <div class="product-rating">
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-half star"></i>
+                                <span class="rating-count">(71)</span>
+                            </div>
+                            <div class="product-price-row">
+                                <span class="product-price">฿4,200</span>
+                            </div>
+                            <button class="btn-add-cart" onclick="addToCart(this, 'Victor P9200CC Shoes')">
+                                <i class="bi bi-cart-plus cart-icon"></i>เพิ่มลงตะกร้า
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 20: Victor BR9612 Bag -->
+                <div class="col-lg-4 col-md-6 product-col" data-brand="victor" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-card">
+                        <div class="product-img-wrapper">
+                            <button class="product-wishlist" title="เพิ่มในรายการโปรด"><i
+                                    class="bi bi-heart"></i></button>
+                            <img src="image/badminton-bag.png" alt="Victor BR9612 Bag">
+                        </div>
+                        <div class="product-body">
+                            <span class="product-brand">Victor</span>
+                            <h5 class="product-name">Victor BR9612 Rectangular Bag กระเป๋า</h5>
+                            <div class="product-rating">
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-half star"></i>
+                                <span class="rating-count">(34)</span>
+                            </div>
+                            <div class="product-price-row">
+                                <span class="product-price">฿3,100</span>
+                            </div>
+                            <button class="btn-add-cart" onclick="addToCart(this, 'Victor BR9612 Bag')">
+                                <i class="bi bi-cart-plus cart-icon"></i>เพิ่มลงตะกร้า
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 21: Victor VBS-66 Nano -->
+                <div class="col-lg-4 col-md-6 product-col" data-brand="victor" data-aos="fade-up" data-aos-delay="300">
+                    <div class="product-card">
+                        <div class="product-img-wrapper">
+                            <button class="product-wishlist" title="เพิ่มในรายการโปรด"><i
+                                    class="bi bi-heart"></i></button>
+                            <img src="image/badminton-string.png" alt="Victor VBS-66 Nano">
+                        </div>
+                        <div class="product-body">
+                            <span class="product-brand">Victor</span>
+                            <h5 class="product-name">Victor VBS-66 Nano เอ็นแบดมินตัน</h5>
+                            <div class="product-rating">
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-half star"></i>
+                                <span class="rating-count">(104)</span>
+                            </div>
+                            <div class="product-price-row">
+                                <span class="product-price">฿320</span>
+                            </div>
+                            <button class="btn-add-cart" onclick="addToCart(this, 'Victor VBS-66 Nano')">
+                                <i class="bi bi-cart-plus cart-icon"></i>เพิ่มลงตะกร้า
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 22: RSL Tourney No.1 -->
+                <div class="col-lg-4 col-md-6 product-col" data-brand="rsl" data-aos="fade-up" data-aos-delay="100">
+                    <div class="product-card">
+                        <div class="product-img-wrapper">
+                            <span class="product-badge badge-bestseller">🔥 ยอดนิยม</span>
+                            <button class="product-wishlist" title="เพิ่มในรายการโปรด"><i
+                                    class="bi bi-heart"></i></button>
+                            <img src="image/rsl-tourney-1.png" alt="RSL Tourney No.1">
+                        </div>
+                        <div class="product-body">
+                            <span class="product-brand">RSL</span>
+                            <h5 class="product-name">RSL Tourney No.1 ลูกขนไก่เกรดแข่งขัน</h5>
+                            <div class="product-rating">
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <span class="rating-count">(318)</span>
+                            </div>
+                            <div class="product-price-row">
+                                <span class="product-price">฿820</span>
+                            </div>
+                            <button class="btn-add-cart" onclick="addToCart(this, 'RSL Tourney No.1')">
+                                <i class="bi bi-cart-plus cart-icon"></i>เพิ่มลงตะกร้า
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 23: RSL Tourney No.3 -->
+                <div class="col-lg-4 col-md-6 product-col" data-brand="rsl" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-card">
+                        <div class="product-img-wrapper">
+                            <button class="product-wishlist" title="เพิ่มในรายการโปรด"><i
+                                    class="bi bi-heart"></i></button>
+                            <img src="image/rsl-tourney-1.png" alt="RSL Tourney No.3">
+                        </div>
+                        <div class="product-body">
+                            <span class="product-brand">RSL</span>
+                            <h5 class="product-name">RSL Tourney No.3 ลูกขนไก่เกรดซ้อม</h5>
+                            <div class="product-rating">
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-half star"></i>
+                                <span class="rating-count">(215)</span>
+                            </div>
+                            <div class="product-price-row">
+                                <span class="product-price">฿650</span>
+                                <span class="product-price-old">฿750</span>
+                                <span class="product-discount">-13%</span>
+                            </div>
+                            <button class="btn-add-cart" onclick="addToCart(this, 'RSL Tourney No.3')">
+                                <i class="bi bi-cart-plus cart-icon"></i>เพิ่มลงตะกร้า
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 24: RSL Explorer Backpack -->
+                <div class="col-lg-4 col-md-6 product-col" data-brand="rsl" data-aos="fade-up" data-aos-delay="300">
+                    <div class="product-card">
+                        <div class="product-img-wrapper">
+                            <button class="product-wishlist" title="เพิ่มในรายการโปรด"><i
+                                    class="bi bi-heart"></i></button>
+                            <img src="image/badminton-bag.png" alt="RSL Explorer Backpack">
+                        </div>
+                        <div class="product-body">
+                            <span class="product-brand">RSL</span>
+                            <h5 class="product-name">RSL Explorer Backpack เป้สะพายหลัง</h5>
+                            <div class="product-rating">
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-half star"></i>
+                                <span class="rating-count">(47)</span>
+                            </div>
+                            <div class="product-price-row">
+                                <span class="product-price">฿1,590</span>
+                            </div>
+                            <button class="btn-add-cart" onclick="addToCart(this, 'RSL Explorer Backpack')">
+                                <i class="bi bi-cart-plus cart-icon"></i>เพิ่มลงตะกร้า
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 25: RSL Dry-Fit Sports Shirt -->
+                <div class="col-lg-4 col-md-6 product-col" data-brand="rsl" data-aos="fade-up" data-aos-delay="100">
+                    <div class="product-card">
+                        <div class="product-img-wrapper">
+                            <span class="product-badge badge-sale">🏷️ ลดล้างสต๊อก</span>
+                            <button class="product-wishlist" title="เพิ่มในรายการโปรด"><i
+                                    class="bi bi-heart"></i></button>
+                            <img src="image/yonex-shirt.png" alt="RSL Dry-Fit Sports Shirt">
+                        </div>
+                        <div class="product-body">
+                            <span class="product-brand">RSL</span>
+                            <h5 class="product-name">RSL Dry-Fit Sports Shirt เสื้อกีฬาแห้งไว</h5>
+                            <div class="product-rating">
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star star empty"></i>
+                                <span class="rating-count">(59)</span>
+                            </div>
+                            <div class="product-price-row">
+                                <span class="product-price">฿450</span>
+                                <span class="product-price-old">฿690</span>
+                                <span class="product-discount">-34%</span>
+                            </div>
+                            <button class="btn-add-cart" onclick="addToCart(this, 'RSL Dry-Fit Sports Shirt')">
+                                <i class="bi bi-cart-plus cart-icon"></i>เพิ่มลงตะกร้า
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 26: Apacs Vanguard 11 -->
+                <div class="col-lg-4 col-md-6 product-col" data-brand="apacs" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-card">
+                        <div class="product-img-wrapper">
+                            <span class="product-badge badge-sale">🏷️ คุ้มค่า</span>
+                            <button class="product-wishlist" title="เพิ่มในรายการโปรด"><i
+                                    class="bi bi-heart"></i></button>
+                            <img src="image/lining-racket.png" alt="Apacs Vanguard 11">
+                        </div>
+                        <div class="product-body">
+                            <span class="product-brand">Apacs</span>
+                            <h5 class="product-name">Apacs Vanguard 11 ไม้แบดสุดทนทาน</h5>
+                            <div class="product-rating">
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-half star"></i>
+                                <span class="rating-count">(122)</span>
+                            </div>
+                            <div class="product-price-row">
+                                <span class="product-price">฿1,990</span>
+                                <span class="product-price-old">฿2,500</span>
+                                <span class="product-discount">-20%</span>
+                            </div>
+                            <button class="btn-add-cart" onclick="addToCart(this, 'Apacs Vanguard 11')">
+                                <i class="bi bi-cart-plus cart-icon"></i>เพิ่มลงตะกร้า
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 27: Apacs Z-Ziggler -->
+                <div class="col-lg-4 col-md-6 product-col" data-brand="apacs" data-aos="fade-up" data-aos-delay="300">
+                    <div class="product-card">
+                        <div class="product-img-wrapper">
+                            <span class="product-badge badge-bestseller">🔥 บุกมันส์</span>
+                            <button class="product-wishlist" title="เพิ่มในรายการโปรด"><i
+                                    class="bi bi-heart"></i></button>
+                            <img src="image/victor-racket.png" alt="Apacs Z-Ziggler">
+                        </div>
+                        <div class="product-body">
+                            <span class="product-brand">Apacs</span>
+                            <h5 class="product-name">Apacs Z-Ziggler ไม้แบดมินตันยอดฮิต</h5>
+                            <div class="product-rating">
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <span class="rating-count">(145)</span>
+                            </div>
+                            <div class="product-price-row">
+                                <span class="product-price">฿2,200</span>
+                            </div>
+                            <button class="btn-add-cart" onclick="addToCart(this, 'Apacs Z-Ziggler')">
+                                <i class="bi bi-cart-plus cart-icon"></i>เพิ่มลงตะกร้า
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 28: Apacs Elite Shoes -->
+                <div class="col-lg-4 col-md-6 product-col" data-brand="apacs" data-aos="fade-up" data-aos-delay="100">
+                    <div class="product-card">
+                        <div class="product-img-wrapper">
+                            <button class="product-wishlist" title="เพิ่มในรายการโปรด"><i
+                                    class="bi bi-heart"></i></button>
+                            <img src="image/badminton-shoes.png" alt="Apacs Elite Shoes">
+                        </div>
+                        <div class="product-body">
+                            <span class="product-brand">Apacs</span>
+                            <h5 class="product-name">Apacs Elite Badminton Shoes รองเท้ากีฬา</h5>
+                            <div class="product-rating">
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-half star"></i>
+                                <span class="rating-count">(61)</span>
+                            </div>
+                            <div class="product-price-row">
+                                <span class="product-price">฿1,890</span>
+                            </div>
+                            <button class="btn-add-cart" onclick="addToCart(this, 'Apacs Elite Shoes')">
+                                <i class="bi bi-cart-plus cart-icon"></i>เพิ่มลงตะกร้า
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 29: Apacs Sports Socks -->
+                <div class="col-lg-4 col-md-6 product-col" data-brand="apacs" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-card">
+                        <div class="product-img-wrapper">
+                            <button class="product-wishlist" title="เพิ่มในรายการโปรด"><i
+                                    class="bi bi-heart"></i></button>
+                            <img src="image/badminton-grip.png" alt="Apacs Sports Socks">
+                        </div>
+                        <div class="product-body">
+                            <span class="product-brand">Apacs</span>
+                            <h5 class="product-name">Apacs Cushion Sports Socks ถุงเท้ากีฬาหนานุ่ม (3 คู่)</h5>
+                            <div class="product-rating">
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-fill star"></i>
+                                <i class="bi bi-star-half star"></i>
+                                <span class="rating-count">(89)</span>
+                            </div>
+                            <div class="product-price-row">
+                                <span class="product-price">฿250</span>
+                            </div>
+                            <button class="btn-add-cart" onclick="addToCart(this, 'Apacs Cushion Sports Socks')">
+                                <i class="bi bi-cart-plus cart-icon"></i>เพิ่มลงตะกร้า
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECTION 5: LOGIN / REGISTER MODAL
+         ======================================== -->
+    <div class="modal fade modal-login" id="loginModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="bi bi-person-badge me-2"></i>บัญชีผู้ใช้</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Login/Register Tabs -->
+                    <div class="login-tabs" id="loginTabs">
+                        <button class="login-tab active" data-tab="login">เข้าสู่ระบบ</button>
+                        <button class="login-tab" data-tab="register">สมัครสมาชิก</button>
+                    </div>
+
+                    <!-- LOGIN TAB -->
+                    <div class="tab-content-login active" id="loginTabContent">
+                        <!-- Social Login -->
+                        <div class="social-login-group">
+                            <button class="btn-social btn-facebook" onclick="socialLogin('Facebook')">
+                                <span class="social-icon"><i class="bi bi-facebook"></i></span>
+                                เข้าสู่ระบบด้วย Facebook
+                            </button>
+                            <button class="btn-social btn-google" onclick="socialLogin('Google')">
+                                <span class="social-icon"><i class="bi bi-google"></i></span>
+                                เข้าสู่ระบบด้วย Google
+                            </button>
+                            <button class="btn-social btn-line" onclick="socialLogin('LINE')">
+                                <span class="social-icon"><i class="bi bi-chat-dots-fill"></i></span>
+                                เข้าสู่ระบบด้วย LINE
+                            </button>
+                        </div>
+
+                        <div class="divider-text">
+                            <span>หรือใช้อีเมล</span>
+                        </div>
+
+                        <!-- Email Login Form -->
+                        <form id="loginForm" onsubmit="handleLogin(event)">
+                            <div class="form-floating-custom">
+                                <input type="email" class="form-input-custom" id="loginEmail" placeholder="อีเมล"
+                                    required>
+                            </div>
+                            <div class="form-floating-custom">
+                                <input type="password" class="form-input-custom" id="loginPassword"
+                                    placeholder="รหัสผ่าน" required>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <label class="form-check-label" style="color: var(--text-muted); font-size: 0.85rem;">
+                                    <input type="checkbox" class="form-check-input me-1"> จดจำฉัน
+                                </label>
+                                <a href="#" style="color: var(--neon-blue); font-size: 0.85rem;">ลืมรหัสผ่าน?</a>
+                            </div>
+                            <button type="submit" class="btn-login-submit">
+                                <i class="bi bi-box-arrow-in-right me-2"></i>เข้าสู่ระบบ
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- REGISTER TAB -->
+                    <div class="tab-content-login" id="registerTabContent">
+                        <!-- Social Register -->
+                        <div class="social-login-group">
+                            <button class="btn-social btn-facebook" onclick="socialLogin('Facebook')">
+                                <span class="social-icon"><i class="bi bi-facebook"></i></span>
+                                สมัครด้วย Facebook
+                            </button>
+                            <button class="btn-social btn-google" onclick="socialLogin('Google')">
+                                <span class="social-icon"><i class="bi bi-google"></i></span>
+                                สมัครด้วย Google
+                            </button>
+                            <button class="btn-social btn-line" onclick="socialLogin('LINE')">
+                                <span class="social-icon"><i class="bi bi-chat-dots-fill"></i></span>
+                                สมัครด้วย LINE
+                            </button>
+                        </div>
+
+                        <div class="divider-text">
+                            <span>หรือสมัครด้วยอีเมล</span>
+                        </div>
+
+                        <!-- Register Form -->
+                        <form id="registerForm" onsubmit="handleRegister(event)">
+                            <div class="form-floating-custom">
+                                <input type="text" class="form-input-custom" id="regName" placeholder="ชื่อ-นามสกุล"
+                                    required>
+                            </div>
+                            <div class="form-floating-custom">
+                                <input type="email" class="form-input-custom" id="regEmail" placeholder="อีเมล"
+                                    required>
+                            </div>
+                            <div class="form-floating-custom">
+                                <input type="tel" class="form-input-custom" id="regPhone" placeholder="เบอร์โทรศัพท์"
+                                    required>
+                            </div>
+                            <div class="form-floating-custom">
+                                <input type="password" class="form-input-custom" id="regPassword" placeholder="รหัสผ่าน"
+                                    required>
+                            </div>
+                            <div class="form-floating-custom">
+                                <input type="password" class="form-input-custom" id="regPasswordConfirm"
+                                    placeholder="ยืนยันรหัสผ่าน" required>
+                            </div>
+                            <button type="submit" class="btn-login-submit">
+                                <i class="bi bi-person-plus me-2"></i>สมัครสมาชิก
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================
+         SECTION 6: STATISTICS DASHBOARD
+         ======================================== -->
+    <section id="stats" class="section-stats">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">
+                ตัวอย่าง สถิติ <span class="highlight">การซื้อขาย</span>
+            </h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                ข้อมูลสถิติการซื้อขายของร้านเรา อัปเดตแบบเรียลไทม์
+            </p>
+
+            <!-- Stat Counter Cards -->
+            <div class="row g-4 mb-5">
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="bi bi-box-seam"></i></div>
+                        <div class="stat-number" data-target="12500">0</div>
+                        <div class="stat-label">สินค้าที่ขายได้</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="bi bi-people"></i></div>
+                        <div class="stat-number" data-target="8300">0</div>
+                        <div class="stat-label">ลูกค้าทั้งหมด</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="bi bi-star-fill"></i></div>
+                        <div class="stat-number" data-target="4.8" data-decimal="true">0</div>
+                        <div class="stat-label">คะแนนเฉลี่ย / 5</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="bi bi-trophy"></i></div>
+                        <div class="stat-number" data-target="15">0</div>
+                        <div class="stat-label">แบรนด์พาร์ทเนอร์</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Row -->
+            <div class="row g-4">
+                <!-- Bar Chart: Monthly Sales -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="chart-card">
+                        <h5 class="chart-title">
+                            <i class="bi bi-bar-chart-fill chart-icon"></i>
+                            ยอดขายรายเดือน (6 เดือนล่าสุด)
+                        </h5>
+                        <div class="chart-container">
+                            <canvas id="monthlySalesChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Doughnut Chart: Brand Sales -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="chart-card">
+                        <h5 class="chart-title">
+                            <i class="bi bi-pie-chart-fill chart-icon"></i>
+                            สัดส่วนยอดขายตามแบรนด์
+                        </h5>
+                        <div class="chart-container">
+                            <canvas id="brandSalesChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Line Chart: Revenue Trend -->
+                <div class="col-12" data-aos="fade-up" data-aos-delay="300">
+                    <div class="chart-card">
+                        <h5 class="chart-title">
+                            <i class="bi bi-graph-up-arrow chart-icon"></i>
+                            แนวโน้มรายได้รายเดือน (ปี 2569)
+                        </h5>
+                        <div class="chart-container">
+                            <canvas id="revenueChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECTION 7: NEWSLETTER & FOOTER
+         ======================================== -->
+    <section class="section-newsletter">
+        <div class="container">
+            <div class="newsletter-card" data-aos="fade-up">
+                <h3 class="newsletter-title">
+                    <span class="neon-text">📬 รับข่าวสาร</span> โปรโมชั่นพิเศษ
+                </h3>
+                <p class="newsletter-desc">
+                    สมัครรับข่าวสาร เพื่อไม่พลาดโปรโมชั่นสุดพิเศษ ส่วนลดสุดคุ้ม และสินค้าใหม่ก่อนใคร!
+                </p>
+                <form class="newsletter-form" id="newsletterForm" onsubmit="handleNewsletter(event)">
+                    <input type="email" class="newsletter-input" placeholder="กรอกอีเมลของคุณ..." required>
+                    <button type="submit" class="btn-newsletter">
+                        <i class="bi bi-send me-1"></i>สมัคร
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Brand Info -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-brand">🏸 BADMINTON PRO</div>
+                    <p class="footer-desc">
+                        ร้านขายอุปกรณ์แบดมินตันออนไลน์ครบวงจร จำหน่ายสินค้าแท้ 100% จากแบรนด์ชั้นนำระดับโลก
+                        พร้อมบริการจัดส่งทั่วประเทศไทย
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" title="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" title="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" title="LINE"><i class="bi bi-chat-dots-fill"></i></a>
+                        <a href="#" title="YouTube"><i class="bi bi-youtube"></i></a>
+                        <a href="#" title="TikTok"><i class="bi bi-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="footer-title">ลิงก์เร็ว</h6>
+                    <ul class="footer-links">
+                        <li><a href="#hero">หน้าแรก</a></li>
+                        <li><a href="#products">สินค้าทั้งหมด</a></li>
+                        <li><a href="#brands">แบรนด์</a></li>
+                        <li><a href="#stats">สถิติ</a></li>
+                        <li><a href="#">โปรโมชั่น</a></li>
+                    </ul>
+                </div>
+
+                <!-- Categories -->
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="footer-title">หมวดหมู่</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">ไม้แบดมินตัน</a></li>
+                        <li><a href="#">ลูกขนไก่</a></li>
+                        <li><a href="#">รองเท้า</a></li>
+                        <li><a href="#">กระเป๋า</a></li>
+                        <li><a href="#">อุปกรณ์เสริม</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="col-lg-4 col-md-6">
+                    <h6 class="footer-title">ติดต่อเรา</h6>
+                    <ul class="footer-links">
+                        <li><i class="bi bi-geo-alt me-2" style="color: var(--neon-blue);"></i>มรภ.ศรีสะเกษ ต.โพธิ์
+                            อ.เมือง จ.ศรีสะเกษ 33000</li>
+                        <li><i class="bi bi-telephone me-2" style="color: var(--neon-blue);"></i>062-040-1150</li>
+                        <li><i class="bi bi-envelope me-2" style="color: var(--neon-blue);"></i>mpoontv1234@gmail.com
+                        </li>
+                        <li><i class="bi bi-clock me-2" style="color: var(--neon-blue);"></i>ทุกวันทำการ</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2569 Badminton Pro Shop. สงวนลิขสิทธิ์ทุกประการ. |
+                    <a href="#" style="color: var(--neon-blue);">นโยบายความเป็นส่วนตัว</a> |
+                    <a href="#" style="color: var(--neon-blue);">เงื่อนไขการใช้งาน</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="btn-back-top" id="btnBackTop" title="กลับขึ้นด้านบน">
+        <i class="bi bi-chevron-up"></i>
+    </button>
+
+    <!-- Toast Notification -->
+    <div class="toast-cart" id="cartToast">
+        <span class="toast-icon"><i class="bi bi-check-circle-fill"></i></span>
+        <span id="toastMessage">เพิ่มสินค้าลงตะกร้าแล้ว!</span>
+    </div>
+
+    <!-- ========================================
+         SCRIPTS
+         ======================================== -->
+    <!-- Bootstrap 5.3 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS - Animate On Scroll -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
