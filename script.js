@@ -383,10 +383,10 @@ function initChartsObserver() {
 // Chart.js Global Defaults
 function getChartDefaults() {
   return {
-    color: '#94a3b8',
-    borderColor: 'rgba(255, 255, 255, 0.06)',
+    color: '#52525b', // Zinc 600
+    borderColor: 'rgba(9, 9, 11, 0.06)', // Very light charcoal line
     font: {
-      family: "'Prompt', sans-serif"
+      family: "'Plus Jakarta Sans', 'Prompt', sans-serif"
     }
   };
 }
@@ -404,23 +404,23 @@ function initMonthlySalesChart() {
         label: 'ยอดขาย (ชิ้น)',
         data: [1850, 2100, 2450, 1980, 2800, 3200],
         backgroundColor: [
-          'rgba(0, 212, 255, 0.7)',
-          'rgba(168, 85, 247, 0.7)',
-          'rgba(236, 72, 153, 0.7)',
-          'rgba(34, 197, 94, 0.7)',
-          'rgba(249, 115, 22, 0.7)',
-          'rgba(0, 212, 255, 0.9)'
+          'rgba(230, 0, 18, 0.85)', // Red
+          'rgba(9, 9, 11, 0.85)',   // Black
+          'rgba(82, 82, 91, 0.85)',  // Dark Gray
+          'rgba(161, 161, 170, 0.85)', // Light Gray
+          'rgba(230, 0, 18, 0.7)',   // Translucent Red
+          'rgba(9, 9, 11, 0.95)'    // Solid Black
         ],
         borderColor: [
-          'rgba(0, 212, 255, 1)',
-          'rgba(168, 85, 247, 1)',
-          'rgba(236, 72, 153, 1)',
-          'rgba(34, 197, 94, 1)',
-          'rgba(249, 115, 22, 1)',
-          'rgba(0, 212, 255, 1)'
+          '#e60012',
+          '#09090b',
+          '#52525b',
+          '#a1a1aa',
+          '#e60012',
+          '#09090b'
         ],
-        borderWidth: 2,
-        borderRadius: 8,
+        borderWidth: 1.5,
+        borderRadius: 4,
         borderSkipped: false,
       }]
     },
@@ -432,16 +432,16 @@ function initMonthlySalesChart() {
           display: false
         },
         tooltip: {
-          backgroundColor: 'rgba(10, 14, 26, 0.9)',
-          titleFont: { family: defaults.font.family },
+          backgroundColor: '#09090b',
+          titleFont: { family: defaults.font.family, weight: '700' },
           bodyFont: { family: defaults.font.family },
-          borderColor: 'rgba(0, 212, 255, 0.3)',
+          borderColor: 'rgba(230, 0, 18, 0.2)',
           borderWidth: 1,
-          cornerRadius: 10,
+          cornerRadius: 6,
           padding: 12,
           callbacks: {
             label: function(context) {
-              return `ยอดขาย: ${context.parsed.y.toLocaleString()} ชิ้น`;
+              return ` ยอดขาย: ${context.parsed.y.toLocaleString()} ชิ้น`;
             }
           }
         }
@@ -468,7 +468,7 @@ function initMonthlySalesChart() {
         }
       },
       animation: {
-        duration: 1500,
+        duration: 1200,
         easing: 'easeOutCubic'
       }
     }
@@ -487,44 +487,44 @@ function initBrandSalesChart() {
       datasets: [{
         data: [35, 25, 20, 10, 6, 4],
         backgroundColor: [
-          'rgba(0, 212, 255, 0.8)',
-          'rgba(249, 115, 22, 0.8)',
-          'rgba(168, 85, 247, 0.8)',
-          'rgba(34, 197, 94, 0.8)',
-          'rgba(236, 72, 153, 0.8)',
-          'rgba(100, 116, 139, 0.8)'
+          '#e60012', // Yonex Red
+          '#09090b', // Li-Ning Black
+          '#52525b', // Victor Dark Gray
+          '#a1a1aa', // RSL Light Gray
+          '#d4d4d8', // Apacs Silver
+          '#e4e4e7'  // Others Light
         ],
-        borderColor: 'rgba(10, 14, 26, 1)',
+        borderColor: '#ffffff',
         borderWidth: 3,
-        hoverOffset: 10,
+        hoverOffset: 8,
       }]
     },
     options: {
       responsive: true,
       maintainAspectRatio: false,
-      cutout: '65%',
+      cutout: '70%',
       plugins: {
         legend: {
           position: 'bottom',
           labels: {
             color: defaults.color,
-            font: { family: defaults.font.family, size: 12 },
-            padding: 16,
+            font: { family: defaults.font.family, size: 11, weight: '600' },
+            padding: 14,
             usePointStyle: true,
-            pointStyleWidth: 12
+            pointStyleWidth: 10
           }
         },
         tooltip: {
-          backgroundColor: 'rgba(10, 14, 26, 0.9)',
-          titleFont: { family: defaults.font.family },
+          backgroundColor: '#09090b',
+          titleFont: { family: defaults.font.family, weight: '700' },
           bodyFont: { family: defaults.font.family },
-          borderColor: 'rgba(0, 212, 255, 0.3)',
+          borderColor: 'rgba(230, 0, 18, 0.2)',
           borderWidth: 1,
-          cornerRadius: 10,
+          cornerRadius: 6,
           padding: 12,
           callbacks: {
             label: function(context) {
-              return `${context.label}: ${context.parsed}%`;
+              return ` ${context.label}: ${context.parsed}%`;
             }
           }
         }
@@ -532,7 +532,7 @@ function initBrandSalesChart() {
       animation: {
         animateRotate: true,
         animateScale: true,
-        duration: 1500,
+        duration: 1200,
         easing: 'easeOutCubic'
       }
     }
@@ -545,12 +545,12 @@ function initRevenueChart() {
   const defaults = getChartDefaults();
 
   const gradient = ctx.createLinearGradient(0, 0, 0, 300);
-  gradient.addColorStop(0, 'rgba(0, 212, 255, 0.3)');
-  gradient.addColorStop(1, 'rgba(0, 212, 255, 0)');
+  gradient.addColorStop(0, 'rgba(230, 0, 18, 0.12)');
+  gradient.addColorStop(1, 'rgba(230, 0, 18, 0)');
 
   const gradient2 = ctx.createLinearGradient(0, 0, 0, 300);
-  gradient2.addColorStop(0, 'rgba(168, 85, 247, 0.2)');
-  gradient2.addColorStop(1, 'rgba(168, 85, 247, 0)');
+  gradient2.addColorStop(0, 'rgba(9, 9, 11, 0.04)');
+  gradient2.addColorStop(1, 'rgba(9, 9, 11, 0)');
 
   new Chart(ctx, {
     type: 'line',
@@ -558,30 +558,30 @@ function initRevenueChart() {
       labels: ['ม.ค.', 'ก.พ.', 'มี.ค.', 'เม.ย.', 'พ.ค.', 'มิ.ย.'],
       datasets: [
         {
-          label: 'รายได้ (บาท)',
+          label: 'รายได้จริง (บาท)',
           data: [850000, 1020000, 1350000, 980000, 1580000, 1850000],
-          borderColor: 'rgba(0, 212, 255, 1)',
+          borderColor: '#e60012',
           backgroundColor: gradient,
           borderWidth: 3,
           fill: true,
-          tension: 0.4,
-          pointBackgroundColor: 'rgba(0, 212, 255, 1)',
-          pointBorderColor: '#0a0e1a',
-          pointBorderWidth: 3,
-          pointRadius: 6,
-          pointHoverRadius: 8,
+          tension: 0.35,
+          pointBackgroundColor: '#e60012',
+          pointBorderColor: '#ffffff',
+          pointBorderWidth: 2.5,
+          pointRadius: 5,
+          pointHoverRadius: 7,
         },
         {
-          label: 'เป้าหมาย (บาท)',
+          label: 'เป้าหมายรายได้ (บาท)',
           data: [900000, 950000, 1100000, 1200000, 1400000, 1600000],
-          borderColor: 'rgba(168, 85, 247, 0.6)',
+          borderColor: 'rgba(9, 9, 11, 0.4)',
           backgroundColor: gradient2,
           borderWidth: 2,
-          borderDash: [8, 4],
+          borderDash: [6, 4],
           fill: true,
-          tension: 0.4,
-          pointBackgroundColor: 'rgba(168, 85, 247, 0.8)',
-          pointBorderColor: '#0a0e1a',
+          tension: 0.35,
+          pointBackgroundColor: 'rgba(9, 9, 11, 0.6)',
+          pointBorderColor: '#ffffff',
           pointBorderWidth: 2,
           pointRadius: 4,
           pointHoverRadius: 6,
@@ -601,22 +601,22 @@ function initRevenueChart() {
           align: 'end',
           labels: {
             color: defaults.color,
-            font: { family: defaults.font.family, size: 12 },
-            padding: 16,
+            font: { family: defaults.font.family, size: 11, weight: '600' },
+            padding: 14,
             usePointStyle: true,
           }
         },
         tooltip: {
-          backgroundColor: 'rgba(10, 14, 26, 0.9)',
-          titleFont: { family: defaults.font.family },
+          backgroundColor: '#09090b',
+          titleFont: { family: defaults.font.family, weight: '700' },
           bodyFont: { family: defaults.font.family },
-          borderColor: 'rgba(0, 212, 255, 0.3)',
+          borderColor: 'rgba(230, 0, 18, 0.2)',
           borderWidth: 1,
-          cornerRadius: 10,
+          cornerRadius: 6,
           padding: 12,
           callbacks: {
             label: function(context) {
-              return `${context.dataset.label}: ฿${context.parsed.y.toLocaleString()}`;
+              return ` ${context.dataset.label}: ฿${context.parsed.y.toLocaleString()}`;
             }
           }
         }
@@ -646,12 +646,13 @@ function initRevenueChart() {
         }
       },
       animation: {
-        duration: 2000,
+        duration: 1500,
         easing: 'easeOutCubic'
       }
     }
   });
 }
+
 
 // ========================================
 // 10. BACK TO TOP BUTTON
