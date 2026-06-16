@@ -3168,7 +3168,7 @@ function saveProducts(products) {
 }
 
 function initProducts() {
-  const dbVer = "1.3";
+  const dbVer = "1.4";
   const storedVer = localStorage.getItem('bps_products_ver');
   if (!localStorage.getItem(PRODUCTS_KEY) || storedVer !== dbVer) {
     saveProducts(INITIAL_PRODUCTS);
@@ -3258,11 +3258,12 @@ function filterByBrandLink(brandName, ev) {
     ev.stopPropagation();
     ev.preventDefault();
   }
-  activeBrand = brandName.toLowerCase();
+  activeBrand = brandName.toLowerCase().replace(/[^a-z0-9]/g, '');
   
   const filterBtns = document.querySelectorAll('.brand-filter-btn');
   filterBtns.forEach(btn => {
-    if (btn.getAttribute('data-brand') === activeBrand) {
+    const btnBrand = (btn.getAttribute('data-brand') || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+    if (btnBrand === activeBrand) {
       btn.classList.add('active');
     } else {
       btn.classList.remove('active');
@@ -4222,26 +4223,19 @@ function handleLogout() {
 }
 
 function socialLogin(provider) {
-  // ──────────────────────────────────────────────────────
-  // Real OAuth Login – redirects to the actual login pages
-  // ──────────────────────────────────────────────────────
-  // NOTE: เมื่อ deploy เว็บจริงบนโดเมนจริง (HTTPS) ให้ตั้งค่า:
-  //   GOOGLE_CLIENT_ID, FACEBOOK_APP_ID, LINE_CHANNEL_ID
-  // ใน Developer Console ของแต่ละแพลตฟอร์ม
-  // แล้วกำหนด redirect_uri กลับมาที่เว็บของเรา
-
-  const currentOrigin = window.location.origin;
-  const redirectUri = currentOrigin + window.location.pathname;
-
-  // ── Placeholder App IDs (ต้องเปลี่ยนเป็นของจริง) ──
+  // ── Configure your Developer App/Client IDs here ──
+  // Please replace these with your actual App/Client IDs registered in the respective developer consoles.
   const GOOGLE_CLIENT_ID = 'YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com';
   const FACEBOOK_APP_ID = 'YOUR_FACEBOOK_APP_ID';
   const LINE_CHANNEL_ID = 'YOUR_LINE_CHANNEL_ID';
 
+  const currentOrigin = window.location.origin;
+  const redirectUri = currentOrigin + window.location.pathname;
+
   let url = '';
 
   if (provider === 'Google') {
-    // Google OAuth 2.0
+    // Google OAuth 2.0 (Implicit Grant)
     url = 'https://accounts.google.com/o/oauth2/v2/auth?' +
       'client_id=' + encodeURIComponent(GOOGLE_CLIENT_ID) +
       '&redirect_uri=' + encodeURIComponent(redirectUri) +
@@ -4250,7 +4244,7 @@ function socialLogin(provider) {
       '&prompt=select_account';
 
   } else if (provider === 'Facebook') {
-    // Facebook OAuth
+    // Facebook OAuth (Implicit Grant)
     url = 'https://www.facebook.com/v19.0/dialog/oauth?' +
       'client_id=' + encodeURIComponent(FACEBOOK_APP_ID) +
       '&redirect_uri=' + encodeURIComponent(redirectUri) +
@@ -4258,8 +4252,9 @@ function socialLogin(provider) {
       '&scope=' + encodeURIComponent('public_profile,email');
 
   } else if (provider === 'LINE') {
-    // LINE Login OAuth 2.1
+    // LINE Login OAuth 2.1 (Authorization Code Flow)
     const state = Math.random().toString(36).substring(2, 15);
+    localStorage.setItem('line_oauth_state', state);
     url = 'https://access.line.me/oauth2/v2.1/authorize?' +
       'response_type=code' +
       '&client_id=' + encodeURIComponent(LINE_CHANNEL_ID) +
@@ -4269,12 +4264,8 @@ function socialLogin(provider) {
   }
 
   if (url) {
-    // เปิดหน้า OAuth จริงในหน้าต่างใหม่
-    const width = 500;
-    const height = 700;
-    const left = (window.screen.width - width) / 2;
-    const top = (window.screen.height - height) / 2;
-    window.open(url, `${provider} Login`, `width=${width},height=${height},left=${left},top=${top},menubar=0,toolbar=0,status=0,resizable=1`);
+    // Redirect current tab directly to the real OAuth login page
+    window.location.href = url;
   }
 }
 
